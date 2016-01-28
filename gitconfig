@@ -1,0 +1,22 @@
+[color]
+	ui = true
+[user]
+	name = Nils Magne Lunde
+	email = nilsml@nilsland.com
+[merge]
+	tool = kdiff3
+[mergetool "kdiff3"]
+  path = /Applications/kdiff3.app/Contents/MacOS/kdiff3
+[diff]
+	tool = kdiff3
+[core]
+	editor = vim
+[alias]
+	l = log --graph --pretty=format':%C(yellow)%h%Cblue%d%Creset %s %C(white) %an, %ar%Creset'
+	who = shortlog -n -s --no-merges
+[credential]
+	helper = osxkeychain
+[push]
+	default = matching
+[mergetool "kdiff3"]
+	path = /Applications/kdiff3.app/Contents/MacOS/kdiff3
