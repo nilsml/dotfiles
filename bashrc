@@ -10,3 +10,12 @@ c_sgr0=`tput sgr0`
 if [ -f "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh" ]; then
     . "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh"
 fi
+
+if [ -f $HOME/.bash_aliases ]
+then
+  . $HOME/.bash_aliases
+fi
+
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
