@@ -10,12 +10,10 @@ set cursorline
 set incsearch
 set foldmethod=syntax
 set foldlevelstart=99
-set t_Co=256
-set term=xterm-256color
+" set t_Co=256
+" set term=xterm-256color
 set termencoding=utf-8
-"let g:solarized_termcolors = 256
 set background=dark
-"let g:solarized_termtrans = 1
 "let g:molokai_original = 1
 "let g:rehash256 = 1
 " disable Background Color Erase (BCE) so that color schemes
@@ -73,60 +71,44 @@ autocmd User Node
   \ endif
 
 " Fuzzyfile
-nmap fc :FufFileWithCurrentBufferDir<CR>
-nmap fb :FufBuffer<CR>
-nmap ft :FufTaggedFile<CR>
-nmap fr :FufCoverageFile<CR>
-nmap ff :FufFile<CR>
-nmap fd :FufDir<CR>
-nmap fj :FufJumpList<CR>
-nmap fl :FufLine<CR>
-nmap fq :FufQuickfix<CR>
+" nmap fc :FufFileWithCurrentBufferDir<CR>
+" nmap fb :FufBuffer<CR>
+" nmap ft :FufTaggedFile<CR>
+" nmap fr :FufCoverageFile<CR>
+" nmap ff :FufFile<CR>
+" nmap fd :FufDir<CR>
+" nmap fj :FufJumpList<CR>
+" nmap fl :FufLine<CR>
+" nmap fq :FufQuickfix<CR>
 
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#begin()
-
-" let Vundle manage Vundle
-" required!
-Plugin 'gmarik/vundle'
-
-" My Bundles here:
-" vim-scripts repos
-Plugin 'L9'
-Plugin 'FuzzyFinder'
-Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/syntastic'
-"Plugin 'altercation/vim-colors-solarized'
-"Plugin 'kongo2002/fsharp-vim'
-Plugin 'fsharp/vim-fsharp'
-" Plugin 'lambdatoast/elm.vim'
-Plugin 'elmcast/elm-vim'
-Plugin 'xaviershay/tslime.vim'
-Plugin 'moll/vim-node'
-Plugin 'pangloss/vim-javascript'
-Plugin 'mxw/vim-jsx'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'tpope/vim-fugitive'
-Plugin 'mhinz/vim-signify'
-Plugin 'rking/ag.vim'
-Plugin 'cohama/lexima.vim'
-Plugin 'edkolev/promptline.vim'
-Plugin 'edkolev/tmuxline.vim'
-"Plugin 'OmniSharp/omnisharp-vim'
-"Bundle 'vim-scripts/vim-auto-save'
-call vundle#end()
-
-" Brief help
-" :BundleList          - list configured bundles
-" :BundleInstall(!)    - install(update) bundles
-" :BundleSearch(!) foo - search(or refresh cache first) for foo
-" :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles
-"
-" see :h vundle for more details or wiki for FAQ
-" NOTE: comments after Bundle command are not allowed..
+" Plugins
+call plug#begin('~/.config/nvim/plugged')
+Plug 'arcticicestudio/nord-vim'
+" Plug 'roxma/nvim-completion-manager'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/syntastic'
+"Plug 'kongo2002/fsharp-vim'
+Plug 'fsharp/vim-fsharp'
+" Plug 'lambdatoast/elm.vim'
+Plug 'elmcast/elm-vim'
+Plug 'xaviershay/tslime.vim'
+Plug 'moll/vim-node'
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'tpope/vim-fugitive'
+Plug 'mhinz/vim-signify'
+Plug 'rking/ag.vim'
+Plug 'cohama/lexima.vim'
+Plug 'edkolev/promptline.vim'
+Plug 'edkolev/tmuxline.vim'
+"Plug 'OmniSharp/omnisharp-vim'
+call plug#end()
 
 " Promptline
 let g:promptline_preset = {
@@ -142,4 +124,4 @@ let g:promptline_symbols = {
 syntax enable
 filetype off
 filetype plugin indent on
-colorscheme monokai
+colorscheme nord
