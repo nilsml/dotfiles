@@ -14,6 +14,7 @@ set foldlevelstart=99
 " set term=xterm-256color
 set termencoding=utf-8
 set background=dark
+let mapleader = ','
 "let g:molokai_original = 1
 "let g:rehash256 = 1
 " disable Background Color Erase (BCE) so that color schemes
@@ -80,7 +81,7 @@ autocmd User Node
 " nmap fj :FufJumpList<CR>
 " nmap fl :FufLine<CR>
 " nmap fq :FufQuickfix<CR>
-
+" map <Leader> <Plug>(easymotion-prefix)
 
 " Plugins
 call plug#begin('~/.config/nvim/plugged')
@@ -107,6 +108,7 @@ Plug 'rking/ag.vim'
 Plug 'cohama/lexima.vim'
 Plug 'edkolev/promptline.vim'
 Plug 'edkolev/tmuxline.vim'
+Plug 'easymotion/vim-easymotion'
 "Plug 'OmniSharp/omnisharp-vim'
 call plug#end()
 
