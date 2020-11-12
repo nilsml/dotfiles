@@ -38,6 +38,10 @@ if has("gui_running")
 set t_ut=
 filetype plugin indent on
 let g:syntastic_javascript_checkers = ['jsxhint']
+
+"fzf
+set rtp+=/usr/local/opt/fzf
+
 "
 "F# stuff
 au BufRead,BufNewFile *.fs set filetype=fsharp
@@ -109,6 +113,8 @@ Plug 'cohama/lexima.vim'
 Plug 'edkolev/promptline.vim'
 Plug 'edkolev/tmuxline.vim'
 Plug 'easymotion/vim-easymotion'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 "Plug 'OmniSharp/omnisharp-vim'
 call plug#end()
 
