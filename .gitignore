@@ -1,2 +1,5 @@
 .DS_Store
 plugged
+config/gh
+config/sanity
+config/configstore
