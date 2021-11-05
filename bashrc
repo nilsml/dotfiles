@@ -7,9 +7,9 @@ c_red=`tput setaf 1`
 c_green=`tput setaf 2`
 c_sgr0=`tput sgr0`
 
-if [ -f "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh" ]; then
-    . "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh"
-fi
+#if [ -f "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh" ]; then
+#    . "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh"
+#fi
 
 if [ -f $HOME/.bash_aliases ]
 then
