@@ -75,7 +75,6 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
-source ~/.bash_aliases
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -100,5 +99,10 @@ source ~/.bash_aliases
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+source ~/.bash_aliases
+
 DISABLE_AUTO_UPDATE=true
 DISABLE_UPDATE_PROMPT=true
+
+# Setup starship
+eval "$(starship init zsh)"
