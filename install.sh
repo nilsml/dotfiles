@@ -12,6 +12,9 @@ files="bash_aliases bash_profile bashrc zshrc shell_prompt.sh vimrc gitconfig pr
 
 ##########
 
+# install or update starship
+sh -c "$(curl -fsSL https://starship.rs/install.sh)"
+
 # install fonts
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/RobotoMono.zip
 sudo unzip RobotoMono.zip -d /usr/share/fonts
