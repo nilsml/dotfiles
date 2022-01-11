@@ -1,3 +1,3 @@
 function l
-	ls -la $argv;
+  exa --long --header --git -a
 end

@@ -2,7 +2,7 @@
 alias q='exit'
 alias dev="cd ~/Dev"
 alias ll="ls -l"
-alias l="ls -la"
+alias l="exa --long --all --git --header"
 alias lsd='ls -l | grep "^d"'
 alias md="mkdir"
 alias vim='mvim -v'

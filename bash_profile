@@ -11,3 +11,5 @@ fi
 
 # Add tab completion for git alias g
 complete -o default -o nospace -F _git g
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
