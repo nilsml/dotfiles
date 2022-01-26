@@ -13,7 +13,7 @@ files="bash_aliases bash_profile bashrc zshrc shell_prompt.sh vimrc gitconfig pr
 ##########
 
 # install or update starship
-sh -c "$(curl -fsSL https://starship.rs/install.sh)"
+sh -c "$(curl -fsSL https://starship.rs/install.sh)" -- -y
 
 # install fonts
 #wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Meslo.zip
