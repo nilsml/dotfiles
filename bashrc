@@ -18,3 +18,11 @@ fi
 
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+if [[ "$TERM_PROGRAM" == "vscode" ]]; then
+  # ~/.profile is run by the login shell (this is what ssh uses)
+  # ~/.bashrc is run by the interactive shell (this is what vscode uses)
+  # Therefore, we only need to change the shell to zsh here since
+  # vscode will run ~/.bashrc for us.
+  exec zsh -l
+fi
