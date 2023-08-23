@@ -32,7 +32,7 @@ source $ZSH/oh-my-zsh.sh
 alias c="code ."
 alias pull="git stash && git pull && git stash pop"
 alias gprune="git remote prune origin && git branch -vv | grep 'origin/.*: gone]' | awk '{print $1}' | xargs git branch -D"
-export PATH=/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH
+export PATH=/opt/homebrew/bin:$PATH
 
 # ~/.zshrc
 
