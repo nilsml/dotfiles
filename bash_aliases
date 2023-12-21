@@ -14,3 +14,6 @@ alias gitk='gitk 2>/dev/null'
 
 # tmux 256 colors
 alias tmux="tmux -2"
+
+# jump to the logseq folder
+alias lsq="cd /Users/nilsml/Library/Mobile Documents/iCloud~com~logseq~logseq/Documents
