@@ -2,7 +2,7 @@
 alias q='exit'
 alias dev="cd ~/Dev"
 alias ll="ls -l"
-alias l="exa --long --header --git -a"
+alias l="eza --long --header --git -a"
 alias lsd='ls -l | grep "^d"'
 alias md="mkdir"
 
@@ -16,4 +16,5 @@ alias gitk='gitk 2>/dev/null'
 alias tmux="tmux -2"
 
 # jump to the logseq folder
-alias lsq="cd /Users/nilsml/Library/Mobile Documents/iCloud~com~logseq~logseq/Documents"
+alias lsq='cd "/Users/nilsml/Library/Mobile Documents/iCloud~com~logseq~logseq/Documents"'
+alias lsc="cd /Users/nilsml/Library/CloudStorage"
