@@ -34,6 +34,10 @@ link_home() {
   for f in zshrc bash_aliases gitconfig vimrc tmux.conf; do
     link "$DOTFILES/$f" "$HOME/.$f"
   done
+  # tmux helper scripts (claude_statusright.sh etc.); plugins stay managed by tpm
+  for f in "$DOTFILES"/tmux/*.sh; do
+    link "$f" "$HOME/.tmux/$(basename "$f")"
+  done
 }
 
 # The old install.sh linked all of ~/.config into this repo, so every tool's
