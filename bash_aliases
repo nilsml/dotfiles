@@ -16,5 +16,5 @@ alias gitk='gitk 2>/dev/null'
 alias tmux="tmux -2"
 
 # jump to the logseq folder
-alias lsq='cd "/Users/nilsml/Library/Mobile Documents/iCloud~com~logseq~logseq/Documents"'
-alias lsc="cd /Users/nilsml/Library/CloudStorage"
+alias lsq='cd "$HOME/Library/Mobile Documents/iCloud~com~logseq~logseq/Documents"'
+alias lsc="cd $HOME/Library/CloudStorage"

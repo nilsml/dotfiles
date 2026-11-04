@@ -1,0 +1,62 @@
+{
+  "cleanupPeriodDays": 180,
+  "permissions": {
+    "allow": [
+      "Bash(grep:*)",
+      "Bash(cat:*)",
+      "Bash(ls:*)",
+      "Bash(twg jira workitem query *)",
+      "Bash(twg jira workitem get *)",
+      "Bash(twg help *)",
+      "Bash(twg confluence content get *)",
+      "Bash(twg confluence search query *)",
+      "Bash(twg jira workitem changelog query *)",
+      "Bash(twg jira workitem bulk-get *)",
+      "Bash(twg confluence space list *)",
+      "Bash(twg confluence tree *)",
+      "Bash(twg jira workitem search *)",
+      "Bash(twg jira workitem link query *)",
+      "Bash(twg work query *)",
+      "Bash(twg jira workitem link-types query *)",
+      "Bash(twg jira board query *)",
+      "Bash(twg confluence content labels list *)",
+      "Bash(twg whoami)"
+    ],
+    "defaultMode": "auto",
+    "blockReadsOutsideWorkingDirectories": true,
+    "additionalDirectories": [
+      "/private/tmp/claude-501",
+      "/Users/nilsml/.claude/projects",
+      "/Users/nilsml/Dev/nml-skills"
+    ]
+  },
+  "skillOverrides": {
+    "skill-creator": "off"
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "bash ~/.claude/statusline-command.sh"
+  },
+  "enabledPlugins": {
+    "miro@claude-plugins-official": true,
+    "cc-plugin-you-should-know@builtin": true,
+    "core@solea": true
+  },
+  "extraKnownMarketplaces": {
+    "solea": {
+      "source": {
+        "source": "directory",
+        "path": "/Users/nilsml/Dev/Solea/solea-agent-skills"
+      }
+    }
+  },
+  "tui": "fullscreen",
+  "theme": "auto",
+  "editorMode": "vim",
+  "agentPushNotifEnabled": true,
+  "modelSettings": {
+    "claude-opus-5-5": {
+      "effortLevel": "medium"
+    }
+  }
+}

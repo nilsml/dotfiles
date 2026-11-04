@@ -1,2 +1,13 @@
 .DS_Store
 plugged
+
+# Written by tools into linked config dirs; may hold tokens or state
+config/gh/hosts.yml
+config/configstore/
+config/fish/fish_history
+config/nvim/plugin/packer_compiled.lua
+
+# Claude runtime data (never commit)
+claude/projects/
+claude/history.jsonl
+claude/*.local.json

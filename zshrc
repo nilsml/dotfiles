@@ -12,10 +12,8 @@ plugins=(
   gh
   z
   docker
-  bundler
   dotenv
   macos
-  ruby
   npm
   zsh-autosuggestions
   zsh-syntax-highlighting
@@ -32,13 +30,9 @@ source $ZSH/oh-my-zsh.sh
 alias c="code ."
 alias pull="git stash && git pull && git stash pop"
 alias gprune="git remote prune origin && git branch -vv | grep 'origin/.*: gone]' | awk '{print $1}' | xargs git branch -D"
-export PATH=/opt/homebrew/bin:$PATH
-
-# ~/.zshrc
-
-eval "$(starship init zsh)"
+# Machine-local settings and secrets (not in git)
+[[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
 
 source ~/.bash_aliases
 
-# Setup starship
 eval "$(starship init zsh)"
