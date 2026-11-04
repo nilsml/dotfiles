@@ -10,6 +10,11 @@ BACKUP="$HOME/.dotfiles_backup/$(date +%Y%m%d-%H%M%S)"
 link() {
   local src="$1" dst="$2"
   [[ -e "$src" ]] || return 0
+  # Never move or link a path onto itself (e.g. through a linked parent folder).
+  if [[ -e "$dst" && "$(cd "$(dirname "$dst")" && pwd -P)/$(basename "$dst")" == "$src" ]]; then
+    echo "skip    $dst is already the repo copy"
+    return 0
+  fi
   if [[ -L "$dst" && "$(readlink "$dst")" == "$src" ]]; then
     echo "ok      $dst"
     return 0
@@ -28,6 +33,25 @@ link_home() {
   local f
   for f in zshrc bash_aliases gitconfig vimrc tmux.conf; do
     link "$DOTFILES/$f" "$HOME/.$f"
+  done
+}
+
+# The old install.sh linked all of ~/.config into this repo, so every tool's
+# tokens ended up here. Turn it back into a real folder and move everything
+# git does not track (secrets, app state) out of the repo into it.
+migrate_config_link() {
+  local cfg="$HOME/.config" entry name
+  [[ -L "$cfg" && "$(cd "$cfg" && pwd -P)" == "$(cd "$DOTFILES/config" && pwd -P)" ]] || return 0
+  echo "migrate ~/.config is a link into the repo; making it a real folder"
+  rm "$cfg"
+  mkdir -p "$cfg"
+  for entry in "$DOTFILES"/config/* "$DOTFILES"/config/.[!.]*; do
+    [[ -e "$entry" ]] || continue
+    name="$(basename "$entry")"
+    if [[ -z "$(git -C "$DOTFILES" ls-files "config/$name")" ]]; then
+      mv "$entry" "$cfg/"
+      echo "moved   config/$name -> ~/.config/ (untracked)"
+    fi
   done
 }
 
@@ -64,6 +88,7 @@ merge_mcp() {
 
 main() {
   link_home
+  migrate_config_link
   link_config
   link_claude
   merge_mcp

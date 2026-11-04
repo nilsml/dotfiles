@@ -1,13 +1,34 @@
 .DS_Store
 plugged
 
-# Written by tools into linked config dirs; may hold tokens or state
+# config/ is an allowlist: tools write tokens and state into ~/.config,
+# so only the folders listed here are ever tracked.
+config/*
+!config/alacritty/
+!config/gh/
+!config/iTerm/
+!config/NuGet/
+!config/nvim/
+!config/powershell/
 config/gh/hosts.yml
-config/configstore/
-config/fish/fish_history
 config/nvim/plugin/packer_compiled.lua
 
-# Claude runtime data (never commit)
-claude/projects/
-claude/history.jsonl
-claude/*.local.json
+# claude/ is an allowlist too: only config, never sessions or history.
+claude/*
+!claude/settings.json
+!claude/CLAUDE.md
+!claude/keybindings.json
+!claude/statusline-command.sh
+!claude/agents/
+!claude/commands/
+!claude/skills/
+!claude/hooks/
+!claude/mcp.json
+!claude/claude_desktop_config.json
+!claude/capture.sh
+
+# Secrets that might land anywhere
+*.local
+*.local.json
+.env
+.env.*
