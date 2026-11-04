@@ -36,3 +36,13 @@ alias gprune="git remote prune origin && git branch -vv | grep 'origin/.*: gone]
 source ~/.bash_aliases
 
 eval "$(starship init zsh)"
+
+export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+
+# --- Claude Code profiles (private vs work) ---
+alias claude-privat='CLAUDE_CONFIG_DIR=$HOME/.claude-privat claude'
+alias claude-jobb='claude'
+
+# Atlassian API (token from macOS keychain, service "atlassian-api")
+export ATLASSIAN_EMAIL="nils.magne.lunde@solea.no"
+export ATLASSIAN_TOKEN="$(security find-generic-password -a "$USER" -s atlassian-api -w 2>/dev/null)"

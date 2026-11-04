@@ -188,3 +188,13 @@ mods = "Alt|Shift"
 chars = "º"
 key = 49
 mods = "Alt|Shift"
+
+[[keyboard.bindings]]
+key = "+"
+mods = "Command"
+action = "IncreaseFontSize"
+
+[[keyboard.bindings]]
+key = "-"
+mods = "Command"
+action = "DecreaseFontSize"
